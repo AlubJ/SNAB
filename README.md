@@ -39,7 +39,7 @@ If you want to contribute to this format by creating an implementation for you f
 SNAB is licensed under the [MIT license](License), which means you can include the SNAB format in any commercial or non-commercial software.
 
 # Specification Versions
-- [SNAB Spec v1.0](v1.0)
+- [SNAB Spec v1.0](v1.0.md)
 
 # Implementations
 Below is a list of SNAB complient and supporting implementations for various languages.
