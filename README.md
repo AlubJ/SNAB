@@ -28,16 +28,18 @@
 
 ---
 
-SNAB (Struct n' Array Binary) is a specification which describes how nested struct and array based data is stored in a binary based file format. SNAB is based on work by Juju Adams and takes inspiration from Binary-JSON. The aim of the format is to have cross-compatible data sharing between languages whilst keeping the data-footprint as small as possible.
+SNAB (Struct n' Array Binary) is a specification which describes how nested struct and array based data is stored in a binary based file format. SNAB is based on work by Juju Adams and takes inspiration from Binary-JSON. The aim of the format is to have cross-compatible data sharing between languages whilst keeping the overhead as small as possible.
 
 SNAB includes a core datatype feature set where the datatypes are deemed to be completely cross-compatible between all major programming languages. Each language implementation may include their own extended datatype feature set which are compatible with their own language.
 
-Below you can find each version of the specification. Any implementations must support all previous versions of the specification to be SNAB complient.
+Below you can find each version of the specification. Any implementation must be backwards compatible with previous versions to be complient, although the latest version that an implementation supports does not need to be the latest version of the specification.
+
+If you want to contribute to this format by creating an implementation for you favourite language, please read the [implementation guidelines](implementation-guidelines.md) first.
 
 SNAB is licensed under the [MIT license](License), which means you can include the SNAB format in any commercial or non-commercial software.
 
-# Specifications
-Each version of SNAB
+# Specification Versions
+- [SNAB Spec v1.0](v1.0)
 
 # Implementations
 Below is a list of SNAB complient and supporting implementations for various languages.
