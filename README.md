@@ -38,6 +38,13 @@ If you want to contribute to this format by creating an implementation for you f
 
 SNAB is licensed under the [MIT license](License), which means you can include the SNAB format in any commercial or non-commercial software.
 
+# SNAB Compliance
+SNAB has two compliance levels: Compliant and Supporting.
+
+A Compliant SNAB implementation must follow the specification exactly, implement all core datatypes, accept all valid SNAB files using the core feature set, and produce SNAB files that can be parsed by any other Compliant implementation. A Compliant implementation may support extended datatypes but must not require them.
+
+A Supporting SNAB implementation must correctly parse SNAB files using the core feature set. Supporting implementations must not change the meaning of core datatype indicators, terminator semantics, or the header layout or size. They must not reinterpret endianness rules or produce files that claim to be Compliant when they are not.
+
 # Specification Versions
 - [SNAB Spec v1.0](v1.0.md)
 
