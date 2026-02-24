@@ -34,7 +34,7 @@ SNAB includes a core datatype feature set where the datatypes are deemed to be c
 
 Below you can find each version of the specification. Any implementation must be backwards compatible with previous versions to be compliant, although the latest version that an implementation supports does not need to be the latest version of the specification.
 
-If you want to contribute to this format by creating an implementation for you favourite language, please read the [implementation guidelines](implementation-guidelines.md) first.
+If you want to contribute to this format by creating an implementation for your favourite language, please read the [implementation guidelines](implementation-guidelines.md) first.
 
 SNAB is licensed under the [MIT license](License), which means you can include the SNAB format in any commercial or non-commercial software.
 
