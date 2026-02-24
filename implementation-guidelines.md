@@ -27,3 +27,6 @@ Implementations should validate to avoid excessive memory allocation, stack exha
 
 ## API Considerations
 An implementation's API design is not strict in naming or case-sensitivity, but it should expose encoding and decoding functionality with appropriate parameters for endianness, compression and other supported features. An implementation's API should include a way to have user-definable datatypes.
+
+## Example SNAB Files
+You can find example SNAB files to test an implementations reader in the `examples` folder in this repo.
