@@ -2,7 +2,7 @@
 name: Add Implementation
 about: Request that a new implementation be added to official SNAB documentation.
 title: "[DOCUMENTATION] "
-labels: ''
+labels: 'documentation'
 assignees: ''
 
 ---
