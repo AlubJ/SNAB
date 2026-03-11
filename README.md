@@ -21,6 +21,9 @@ A Compliant SNAB implementation must follow the specification exactly, implement
 
 A Supporting SNAB implementation must correctly parse SNAB files using the core feature set. Supporting implementations must not change the meaning of core datatype indicators, terminator semantics, or the header layout or size. They must not reinterpret endianness rules or produce files that claim to be Compliant when they are not.
 
+# Proposing extensions
+SNAB is an extensible specification and will be continuously renewed with new versions. For more information about proposing specification changes, or documenting common format extensions, see the [SNAB Extension Proposal Guide](proposals.md).
+
 # Specification Versions
 - [SNAB Spec v1.0](v1.0.md)
 
