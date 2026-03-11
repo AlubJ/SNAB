@@ -2,7 +2,7 @@
 name: Extension Proposal
 about: Propose an extension to the SNAB specification.
 title: "[PROPOSAL] "
-labels: ''
+labels: 'user-extension,proposal'
 assignees: ''
 
 ---
