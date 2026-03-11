@@ -1,6 +1,6 @@
 <h1 align="center">SNAB v1.0</h1>
 
-<p align="center">A binary format for serializing and deserializing struct and array data by <a href="https://alub.dev/" target="_blank">Alun Jones</a> and <a href="https://chosenfewsoftware.com">Isabelle Santin</a> and based on <a href="https://github.com/JujuAdams/SNAP">SNAP Custom Binary</a> by <a href="https://jujuadams.com">Juju Adams</a>.</p>
+<p align="center">A binary format for serializing and deserializing struct and array data by <a href="https://alub.dev/" target="_blank">Alun Jones</a> and <a href="https://www.chosenfewsoftware.com">Isabelle Santin</a> and based on <a href="https://github.com/JujuAdams/SNAP">SNAP Custom Binary</a> by <a href="https://www.jujuadams.com">Juju Adams</a>.</p>
 
 ---
 
@@ -21,7 +21,7 @@ A Compliant SNAB implementation must follow the specification exactly, implement
 
 A Supporting SNAB implementation must correctly parse SNAB files using the core feature set. Supporting implementations must not change the meaning of core datatype indicators, terminator semantics, or the header layout or size. They must not reinterpret endianness rules or produce files that claim to be Compliant when they are not.
 
-# Proposing extensions
+# Proposing Extensions
 SNAB is an extensible specification and will be continuously renewed with new versions. For more information about proposing specification changes, or documenting common format extensions, see the [SNAB Extension Proposal Guide](proposals.md).
 
 # Specification Versions
