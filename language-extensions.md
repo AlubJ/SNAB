@@ -4,4 +4,4 @@ Each implementation of SNAB can include specific language features and are only 
 # .NET (C#)
 | **Datatype** | **Indicator** | **Size** | **Usage** | **Version(s) Valid** |
 |--------------|---------------|----------|-----------|----------------------|
-| `GUID/UUID`  | `0x80`        | `0x16`   | Unique identifier for discrete records or other uses. | `v1.0` - `Current` |
+| `GUID/UUID`  | `0x80`        | `0x16`   | Unique identifier for discrete records or other uses following the [RFC4122 spec](https://www.rfc-editor.org/rfc/rfc4122.txt). | `v1.0` - `Current` |
