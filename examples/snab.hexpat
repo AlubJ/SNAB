@@ -5,6 +5,7 @@
 #pragma array_limit 4294967296
 
 import hex.dec;
+import type.guid;
 
 using SnabStructLE;
 using SnabStructBE;
@@ -48,7 +49,7 @@ struct SnabValueLE {
         (SnabType::Real): le double Value;
         (SnabType::Integer): le s64 Value;
         (SnabType::Buffer): SnabBufferLE Value;
-        (SnabType::Guid): u8 Value[16];
+        (SnabType::Guid): le type::GUID Value;
     }  
 };
 
@@ -63,7 +64,7 @@ struct SnabValueBE {
         (SnabType::Real): be double Value;
         (SnabType::Integer): be s64 Value;
         (SnabType::Buffer): SnabBufferBE Value;
-        (SnabType::Guid): u8 Value[16];
+        (SnabType::Guid): be type::GUID Value;
     }  
 };
 
@@ -81,7 +82,7 @@ struct SnabFieldLE {
         (SnabType::Real): le double Value;
         (SnabType::Integer): le s64 Value;
         (SnabType::Buffer): SnabBufferLE Value;
-        (SnabType::Guid): u8 Value[16];
+        (SnabType::Guid): le type::GUID Value;
     }  
 };
 
@@ -99,7 +100,7 @@ struct SnabFieldBE {
         (SnabType::Real): be double Value;
         (SnabType::Integer): be s64 Value;
         (SnabType::Buffer): SnabBufferBE Value;
-        (SnabType::Guid): u8 Value[16];
+        (SnabType::Guid): be type::GUID Value;
     }  
 };
 
