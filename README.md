@@ -25,11 +25,15 @@ A Supporting SNAB implementation must correctly parse SNAB files using the core 
 SNAB is an extensible specification and will be continuously renewed with new versions. For more information about proposing specification changes, or documenting common format extensions, see the [SNAB Extension Proposal Guide](proposals.md). Officially recognised language extensions can be found [here](language-extensions.md).
 
 # Specification Versions
+
+**Version 1.x:**
+
+- [SNAB Spec v1.1](v1.1.md) (Latest)
 - [SNAB Spec v1.0](v1.0.md)
 
 # Implementations
 Below is a list of SNAB compliant and supporting implementations for various languages.
-| **Implementation** | **Language** | **SNAB Version** |
-|--------------------|--------------|------------------|
-| [CFS.SnabNet](https://github.com/IsaMorphic/CFS.SnabNet)        | .NET         | v1.0             |
-| [SNAB.py](https://github.com/AlubJ/SNAB.py)            | Python       | v1.0             |
+| **Implementation**                                       | **Language** | **SNAB Version** |
+| -------------------------------------------------------- | ------------ | ---------------- |
+| [CFS.SnabNet](https://github.com/IsaMorphic/CFS.SnabNet) | .NET         | v1.1             |
+| [SNAB.py](https://github.com/AlubJ/SNAB.py)              | Python       | v1.1             |
