@@ -1,4 +1,4 @@
-<h1 align="center">SNAB v1.0</h1>
+<h1 align="center">SNAB v1.1</h1>
 
 <p align="center">A binary format for serializing and deserializing struct and array data by <a href="https://alub.dev/" target="_blank">Alun Jones</a> and <a href="https://www.chosenfewsoftware.com">Isabelle Santin</a> and based on <a href="https://github.com/JujuAdams/SNAP">SNAP Custom Binary</a> by <a href="https://www.jujuadams.com">Juju Adams</a>.</p>
 
