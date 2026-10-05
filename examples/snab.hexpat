@@ -22,7 +22,7 @@ enum SnabType : u8 {
     Undefined = 0x09,
     Null = 0x0A,
     Buffer = 0x0B,
-    Guid = 0x80,
+    Guid = 0x0C,
 };
 
 struct SnabBuffer {
