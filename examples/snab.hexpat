@@ -1,16 +1,13 @@
 // ImHex Pattern File for SNAB container files
 
-#pragma endianness little
 #pragma pattern_limit 4294967296
 #pragma array_limit 4294967296
 
 import hex.dec;
 import type.guid;
 
-using SnabStructLE;
-using SnabStructBE;
-using SnabArrayLE;
-using SnabArrayBE;
+using SnabStruct;
+using SnabArray;
 
 enum SnabType : u8 {
     None = 0x00,
@@ -28,88 +25,50 @@ enum SnabType : u8 {
     Guid = 0x80,
 };
 
-struct SnabBufferLE {
-    le u32 Length;
+struct SnabBuffer {
+    u32 Length;
     u8 Data[Length];
 };
 
-struct SnabBufferBE {
-    be u32 Length;
-    u8 Data[Length];
-};
-
-struct SnabValueLE {
+struct SnabValue {
     SnabType Type;
     match (Type) {
         (SnabType::None): break;
-        (SnabType::Struct): SnabStructLE Value;
-        (SnabType::Array): SnabArrayLE Value;
+        (SnabType::Struct): SnabStruct Value;
+        (SnabType::Array): SnabArray Value;
         (SnabType::String): char Value[];
         (SnabType::WString): char16 Value[];
-        (SnabType::Real): le double Value;
-        (SnabType::Integer): le s64 Value;
-        (SnabType::Buffer): SnabBufferLE Value;
-        (SnabType::Guid): le type::GUID Value;
+        (SnabType::Real): double Value;
+        (SnabType::Integer): s64 Value;
+        (SnabType::Buffer): SnabBuffer Value;
+        (SnabType::Guid): type::GUID Value;
     }  
 };
 
-struct SnabValueBE {
-    SnabType Type;
-    match (Type) {
-        (SnabType::None): break;
-        (SnabType::Struct): SnabStructBE Value;
-        (SnabType::Array): SnabArrayBE Value;
-        (SnabType::String): char Value[];
-        (SnabType::WString): char16 Value[];
-        (SnabType::Real): be double Value;
-        (SnabType::Integer): be s64 Value;
-        (SnabType::Buffer): SnabBufferBE Value;
-        (SnabType::Guid): be type::GUID Value;
-    }  
-};
-
-struct SnabFieldLE {
+struct SnabField {
     SnabType Type;
     if(Type != SnabType::None) {
         char Name[];
     }
     match (Type) {
         (SnabType::None): break;
-        (SnabType::Struct): SnabStructLE Value;
-        (SnabType::Array): SnabArrayLE Value;
+        (SnabType::Struct): SnabStruct Value;
+        (SnabType::Array): SnabArray Value;
         (SnabType::String): char Value[];
         (SnabType::WString): char16 Value[];
-        (SnabType::Real): le double Value;
-        (SnabType::Integer): le s64 Value;
-        (SnabType::Buffer): SnabBufferLE Value;
-        (SnabType::Guid): le type::GUID Value;
+        (SnabType::Real): double Value;
+        (SnabType::Integer): s64 Value;
+        (SnabType::Buffer): SnabBuffer Value;
+        (SnabType::Guid): type::GUID Value;
     }  
 };
 
-struct SnabFieldBE {
-    SnabType Type;
-    if(Type != SnabType::None) {
-        char Name[];
-    }
-    match (Type) {
-        (SnabType::None): break;
-        (SnabType::Struct): SnabStructBE Value;
-        (SnabType::Array): SnabArrayBE Value;
-        (SnabType::String): char Value[];
-        (SnabType::WString): char16 Value[];
-        (SnabType::Real): be double Value;
-        (SnabType::Integer): be s64 Value;
-        (SnabType::Buffer): SnabBufferBE Value;
-        (SnabType::Guid): be type::GUID Value;
-    }  
+struct SnabStruct {
+    SnabField Fields[while(true)];
 };
 
-struct SnabStructLE {
-    SnabFieldLE Fields[while(true)];
-};
-
-struct SnabArrayLE {
-    SnabValueLE Items[while(true)];
+struct SnabArray {
+    SnabValue Items[while(true)];
 };
 
 bitfield SnabFlags {
@@ -130,23 +89,23 @@ struct SnabHeader {
 };
 
 struct SnabContainer {
-    SnabHeader Header;
+    le SnabHeader Header;
     if (Header.Flags.Compressed) {
         u8 CompressedData[Header.Length];
     
-        std::mem::Section DecompressedData = std::mem::create_section("Decompressed Data");
+        std::mem::Section DecompressedData = std::mem::create_section("Decompressed");
     
         hex::dec::zlib_decompress(CompressedData, DecompressedData, 15);
         
         if(Header.Flags.BigEndian)
-            SnabValueBE Data @ 0x00 in DecompressedData;
+            be SnabValue Data @ 0x00 in DecompressedData;
         else
-            SnabValueLE Data @ 0x00 in DecompressedData;
+            le SnabValue Data @ 0x00 in DecompressedData;
     } else {
         if(Header.Flags.BigEndian)
-            SnabValueBE Data;
+            be SnabValue Data;
         else
-            SnabValueLE Data;        
+            le SnabValue Data;        
     }
 };
 
