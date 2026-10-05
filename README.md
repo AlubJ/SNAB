@@ -28,8 +28,9 @@ SNAB is an extensible specification and will be continuously renewed with new ve
 
 **Version 1.x:**
 
-- [SNAB Spec v1.1](v1.1.md) (Latest)
-- [SNAB Spec v1.0](v1.0.md)
+* [SNAB Spec v1.1](v1.1.md) (Latest)
+
+* [SNAB Spec v1.0](v1.0.md)
 
 # Implementations
 Below is a list of SNAB compliant and supporting implementations for various languages.
