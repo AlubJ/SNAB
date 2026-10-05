@@ -4,7 +4,6 @@
 #pragma array_limit 4294967296
 
 import hex.dec;
-import hex.core;
 import type.guid;
 
 using SnabStruct;
