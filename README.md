@@ -1,4 +1,4 @@
-<h1 align="center">SNAB v1.0</h1>
+<h1 align="center">SNAB v1.1</h1>
 
 <p align="center">A binary format for serializing and deserializing struct and array data by <a href="https://alub.dev/" target="_blank">Alun Jones</a> and <a href="https://www.chosenfewsoftware.com">Isabelle Santin</a> and based on <a href="https://github.com/JujuAdams/SNAP">SNAP Custom Binary</a> by <a href="https://www.jujuadams.com">Juju Adams</a>.</p>
 
@@ -25,11 +25,16 @@ A Supporting SNAB implementation must correctly parse SNAB files using the core 
 SNAB is an extensible specification and will be continuously renewed with new versions. For more information about proposing specification changes, or documenting common format extensions, see the [SNAB Extension Proposal Guide](proposals.md). Officially recognised language extensions can be found [here](language-extensions.md).
 
 # Specification Versions
-- [SNAB Spec v1.0](v1.0.md)
+
+**Version 1.x:**
+
+* [SNAB Spec v1.1](v1.1.md) (Latest)
+
+* [SNAB Spec v1.0](v1.0.md)
 
 # Implementations
 Below is a list of SNAB compliant and supporting implementations for various languages.
-| **Implementation** | **Language** | **SNAB Version** |
-|--------------------|--------------|------------------|
-| [CFS.SnabNet](https://github.com/IsaMorphic/CFS.SnabNet)        | .NET         | v1.0             |
-| [SNAB.py](https://github.com/AlubJ/SNAB.py)            | Python       | v1.0             |
+| **Implementation**                                       | **Language** | **SNAB Version** |
+| -------------------------------------------------------- | ------------ | ---------------- |
+| [CFS.SnabNet](https://github.com/IsaMorphic/CFS.SnabNet) | .NET         | v1.1             |
+| [SNAB.py](https://github.com/AlubJ/SNAB.py)              | Python       | v1.1             |
