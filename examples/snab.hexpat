@@ -4,6 +4,7 @@
 #pragma array_limit 4294967296
 
 import hex.dec;
+import hex.core;
 import type.guid;
 
 using SnabStruct;
@@ -30,6 +31,14 @@ struct SnabBuffer {
     u8 Data[Length];
 };
 
+struct SnabInteger {
+    s64;
+};
+
+struct SnabReal {
+    double;
+};
+
 struct SnabValue {
     SnabType Type;
     match (Type) {
@@ -38,8 +47,8 @@ struct SnabValue {
         (SnabType::Array): SnabArray Value;
         (SnabType::String): char Value[];
         (SnabType::WString): char16 Value[];
-        (SnabType::Real): double Value;
-        (SnabType::Integer): s64 Value;
+        (SnabType::Real): SnabReal Value;
+        (SnabType::Integer): SnabInteger Value;
         (SnabType::Buffer): SnabBuffer Value;
         (SnabType::Guid): type::GUID Value;
     }  
@@ -56,8 +65,8 @@ struct SnabField {
         (SnabType::Array): SnabArray Value;
         (SnabType::String): char Value[];
         (SnabType::WString): char16 Value[];
-        (SnabType::Real): double Value;
-        (SnabType::Integer): s64 Value;
+        (SnabType::Real): SnabReal Value;
+        (SnabType::Integer): SnabInteger Value;
         (SnabType::Buffer): SnabBuffer Value;
         (SnabType::Guid): type::GUID Value;
     }  
